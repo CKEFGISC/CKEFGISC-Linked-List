@@ -19,7 +19,7 @@ namespace AaW {  // use a namespace under your name
             node* prev; // 雙向 linked list 
 
             // constructor & deconstructor
-            node(int _val);
+            node(int _val) val(_val) { } 
             ~node() = default; // 用內建deconstructor就好
         }; // struct node;
         
@@ -50,8 +50,6 @@ namespace AaW {  // use a namespace under your name
     // (我們會發現把實作和宣告放在一起好像有點亂，因此之後教標頭檔時，
     //  會告訴大家要如何把實作和宣告放進不同檔案當中)
 
-    // constructor of node
-    LinkedList::node::node(int _val) : val(_val){ };
 
     LinkedList::LinkedList() {
         // 創立startNode和endNode
@@ -159,7 +157,7 @@ namespace AaW {  // use a namespace under your name
     LinkedList::node* LinkedList::find(int val) {  //  尋找第一個 val 出現的位置並且回傳指標
         // cur 為迭代整個linked list要使用的指標
         auto cur = this->begin();
-        
+
         // 當cur的值和我們要找得不一樣時，將cur指向下一個位置
         while (cur->val != val && cur != endNode) { 
             cur = cur->next;
