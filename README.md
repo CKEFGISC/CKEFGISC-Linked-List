@@ -1,5 +1,6 @@
 # CKEFGISC-Linked-List
 歡迎來到專案建置聯課的github，這裡有我們社課建立的linked list專案的樣本！<br>
+我們連專案結構都幫你架設完成了喔，快感謝講師的肝吧<br>
 
 ## 往各個分支的快速連結
 11/16 簡報：https://slides.com/ck1100363/struct/ <br>
@@ -26,3 +27,6 @@ github desktop教學請右轉：[link](https://medium.com/@u10200001/github-desk
 再點選download zip<br>
 <img width="521" alt="image" src="https://user-images.githubusercontent.com/99801904/201916689-be37cbea-5ea5-44f0-a06f-bbb97d40739f.png"><br>
 
+## LICENSE
+本專案作為社團教學用途，並且以 [MIT Lisense] 方式公開。<br>
+copyright(c) 2022 CKEFGISC<br>
