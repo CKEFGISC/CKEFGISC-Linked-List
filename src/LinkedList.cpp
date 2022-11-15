@@ -19,7 +19,7 @@ namespace AaW {  // use a namespace under your name
             node* prev; // 雙向 linked list 
 
             // constructor & deconstructor
-            node(int val);
+            node(int _val) :val(_val) { }
             ~node();
         }; // struct node;
         
@@ -49,6 +49,35 @@ namespace AaW {  // use a namespace under your name
     // 函數實作區 
     // (我們會發現把實作和宣告放在一起好像有點亂，因此之後教標頭檔時，
     //  會告訴大家要如何把實作和宣告放進不同檔案當中)
+
+
+    __________::__________() {
+        // 創立startNode和endNode
+        this->__________ = new LinkedList::node(0);
+        this->________ = new LinkedList::node(0);
+        
+        // 連接startNode和endNode
+        startNode->next = __________;
+        endNode->prev = _________;
+
+        // 初始化大小
+        this->listSize = 0;
+        return;
+    } // LinkedList::LinkedList()
+
+    LinkedList::~LinkedList() {
+        // 刪除startNode和中間所有實節點
+        auto cur = startNode;
+        while (cur != endNode) {
+            auto toDelete = cur;
+            cur = cur->next;
+            delete toDelete;
+        }
+
+        // 刪除endNode
+        delete endNode;
+        return;
+    } // LinkedList::~LinkedList()
 
     int _________::size() {
         return this->_________;
@@ -91,7 +120,7 @@ namespace AaW {  // use a namespace under your name
 
         // 將新節點和pos連結
         pos->prev = _________;
-        newNode->next = _________;
+        newNode->next = ___;
 
         // 將新節點和beforeNode連結
         newNode->prev = _________;
