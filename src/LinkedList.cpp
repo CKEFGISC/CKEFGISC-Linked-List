@@ -50,29 +50,29 @@ namespace AaW {  // use a namespace under your name
     // (我們會發現把實作和宣告放在一起好像有點亂，因此之後教標頭檔時，
     //  會告訴大家要如何把實作和宣告放進不同檔案當中)
 
-    int LinkedList::size() {
-        return this->listSize;
+    int _________::size() {
+        return this->_________;
     }
 
-    bool LinkedList::empty() {
-        return (this->listSize == 0);
+    bool _________::empty() {
+        return (this->_________ == 0);
     }
 
-    LinkedList::node* LinkedList::begin() {  // 回傳第一個"實"節點，若 list 為空則回傳 endNode
-        return this->startNode->next;  // 為空時startNode->next就是endNode
+    _________::node* LinkedList::begin() {  // 回傳第一個"實"節點，若 list 為空則回傳 endNode
+        return this->_________->_____;  // 為空時startNode->next就是endNode
     } // LinkedList::begin()
 
     LinkedList::node* LinkedList::end() {  // 回傳最後一個節點，也就是 endNode
-        return this->endNode;
+        return this->_________;
     } // LinkedList::end()
 
     LinkedList::node* LinkedList::rbegin() {   // 回傳反向第一個"實"節點，
                                                // 若 list 為空則回傳 startNode
-        return this->endNode->prev;  // 為空時endNode->prev就是startNode
+        return this->_______->____;  // 為空時endNode->prev就是startNode
     } // LinkedList::rbegin()
 
     LinkedList::node* LinkedList::rend() {
-        return this->startNode;
+        return this->_________;
     } // LinkedList::rend()
 
     void LinkedList::insert(int val, LinkedList::node* pos) {   //  在 pos 前方插入一項
@@ -81,47 +81,47 @@ namespace AaW {  // use a namespace under your name
         
         // 先取得beforeNode
         // 如果pos為startNode時丟出錯誤 (不該再)
-        if (pos == this->startNode) {
+        if (___ == this->_________) {
             throw "ERROR: trying to insert at startNode (a virt. node before .begin()).";
         }
-        LinkedList::node* beforeNode = pos->prev;
+        LinkedList::node* beforeNode = pos->____;
 
         // 建立新節點
-        LinkedList::node* newNode = new LinkedList::node(val);
+        LinkedList::node* newNode = n__ __________::____(___);
 
         // 將新節點和pos連結
-        pos->prev = newNode;
-        newNode->next = beforeNode;
+        pos->prev = _________;
+        newNode->next = _________;
 
         // 將新節點和beforeNode連結
-        newNode->prev = beforeNode;
-        beforeNode->next = newNode;
+        newNode->prev = _________;
+        beforeNode->next = _________;
 
         // 更改LinkedList大小
-        this->listSize += 1;
+        this->listSize _______;
 
         return;
     } // LinkedList::insert()
 
     void LinkedList::erase(LinkedList::node* pos) {  //  傳入指標，刪除該位置
         // 如果 pos 為 startNode 或是 endNode時報錯
-        if (pos == startNode || pos == endNode) {
+        if (pos == _________ || pos == _________) {
             throw "ERROR: erasing a virt. node.";
         }
 
         // 取得pos前後的節點
-        LinkedList::node* beforeNode = pos->prev;
-        LinkedList::node* afterNode = pos->next;
+        LinkedList::node* beforeNode = _________;
+        LinkedList::node* afterNode = _________;
 
         // 連結 beforeNode 和 afterNode
-        beforeNode->next = afterNode;
-        afterNode->prev = beforeNode;
+        beforeNode->next = _________;
+        afterNode->prev = _________;
 
         // 刪除 pos
-        delete pos;
+        d_____ ___;
 
         // 更改LinkedList大小
-        this->listSize -= 1;
+        this->listSize ______;
 
     } // LinkedList::erase()
 
@@ -130,12 +130,12 @@ namespace AaW {  // use a namespace under your name
         auto cur = this->begin();
 
         // 當cur的值和我們要找得不一樣時，將cur指向下一個位置
-        while (cur->val != val && cur != this->end()) { 
-            cur = cur->next;
+        while (cur->___ != ___ /*判斷值*/ && cur != _________ /*判斷是否到結尾*/ ) { 
+            cur = cur->____;
         }
 
         // 回傳找到的結果
-        return cur;
+        return ___;
     } // LinkedList::find()
 
     void LinkedList::print() {  // 輸出整個LinkedList
