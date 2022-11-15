@@ -36,4 +36,4 @@ github desktop教學請右轉：[link](https://medium.com/@u10200001/github-desk
 
 ## LICENSE
 本專案作為社團教學用途，並且以 [MIT License](LICENSE) 方式公開。<br>
-copyright(c) 2022 CKEFGISC<br>
+copyright(c) 2022 AaronWu-train & CKEFGISC<br>
