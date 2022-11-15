@@ -19,13 +19,13 @@ namespace AaW {  // use a namespace under your name
             node* prev; // 雙向 linked list 
 
             // constructor & deconstructor
-            node(int val);
-            ~node();
+            node(int _val);
+            ~node() = default; // 用內建deconstructor就好
         }; // struct node;
         
         // constructor & deconstructor
-        LinkedList();       // 建立新的 linked list，並且初始化兩個
-        ~LinkedList();
+        LinkedList();       // 建立新的 linked list，並且初始化兩個虛節點
+        ~LinkedList();      // 刪除每一個建立的節點
 
         // member variables
         int listSize = 0;
@@ -49,6 +49,37 @@ namespace AaW {  // use a namespace under your name
     // 函數實作區 
     // (我們會發現把實作和宣告放在一起好像有點亂，因此之後教標頭檔時，
     //  會告訴大家要如何把實作和宣告放進不同檔案當中)
+
+    // constructor of node
+    LinkedList::node::node(int _val) : val(_val){ };
+
+    LinkedList::LinkedList() {
+        // 創立startNode和endNode
+        this->startNode = new LinkedList::node(0);
+        this->endNode = new LinkedList::node(0);
+        
+        // 連接startNode和endNode
+        startNode->next = endNode;
+        endNode->prev = startNode;
+
+        // 初始化大小
+        this->listSize = 0;
+        return;
+    } // LinkedList::LinkedList()
+
+    LinkedList::~LinkedList() {
+        // 刪除startNode和中間所有實節點
+        auto cur = startNode;
+        while (cur != endNode) {
+            auto toDelete = cur;
+            cur = cur->next;
+            delete toDelete;
+        }
+
+        // 刪除endNode
+        delete endNode;
+        return;
+    } // LinkedList::~LinkedList()
 
     int LinkedList::size() {
         return this->listSize;
@@ -91,7 +122,7 @@ namespace AaW {  // use a namespace under your name
 
         // 將新節點和pos連結
         pos->prev = newNode;
-        newNode->next = beforeNode;
+        newNode->next = pos;
 
         // 將新節點和beforeNode連結
         newNode->prev = beforeNode;
@@ -128,9 +159,9 @@ namespace AaW {  // use a namespace under your name
     LinkedList::node* LinkedList::find(int val) {  //  尋找第一個 val 出現的位置並且回傳指標
         // cur 為迭代整個linked list要使用的指標
         auto cur = this->begin();
-
+        
         // 當cur的值和我們要找得不一樣時，將cur指向下一個位置
-        while (cur->val != val && cur != this->end()) { 
+        while (cur->val != val && cur != endNode) { 
             cur = cur->next;
         }
 
@@ -145,6 +176,7 @@ namespace AaW {  // use a namespace under your name
         // 迭代整個linked list
         while (cur != this->end()) {
             std::cout << cur->val << " ";
+            cur = cur->next;
         }
         std::cout << std::endl;
 
@@ -152,3 +184,24 @@ namespace AaW {  // use a namespace under your name
     } // LinkedList::print()
 
 } // namespace AaW (在結尾標記這個大括號是誰是個好習慣！)
+
+/////////////////////////////////////////////////////////////////////
+// 測試執行區域
+
+int main() {
+    AaW::LinkedList ls;
+    std::cout << ls.size() << std::endl;
+
+    ls.insert(10, ls.begin());
+    ls.print();
+    ls.insert(20, ls.begin());
+    ls.insert(50, ls.end());
+    ls.print();
+    auto ret = ls.find(10);
+    ls.insert(12, ret);
+    ls.print();
+    ls.erase(ret);
+    ls.print();
+    std::cout << ls.size() << std::endl;
+
+}
