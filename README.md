@@ -13,7 +13,14 @@
 可以點選畫面左上方切換分枝
 <img width="555" alt="image" src="https://user-images.githubusercontent.com/99801904/201915357-7094f14a-1041-42cb-a434-ba097e733e15.png"><br>
 
-另外，可以使用以下指令將專案clone到本機<br>
+另外，你可以將此專案fork到自己的帳號當中，再進行clone<br>
+![image](https://user-images.githubusercontent.com/99801904/201918009-510d7369-eec0-46d1-8a1b-5f26808584d2.png)
+![image](https://user-images.githubusercontent.com/99801904/201918234-9a5fe780-5dae-47af-aba9-ce172a5f4dab.png)
+```
+git clone <你專案的網址>
+```
+
+或是直接使用以下指令將專案clone到本機<br>
 ```
 git clone https://github.com/CKEFGISC/CKEFGISC-Linked-List.git
 ```
