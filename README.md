@@ -35,5 +35,5 @@ github desktop教學請右轉：[link](https://medium.com/@u10200001/github-desk
 <img width="521" alt="image" src="https://user-images.githubusercontent.com/99801904/201916689-be37cbea-5ea5-44f0-a06f-bbb97d40739f.png"><br>
 
 ## LICENSE
-本專案作為社團教學用途，並且以 [MIT Lisense] 方式公開。<br>
+本專案作為社團教學用途，並且以 [MIT License](LICENSE) 方式公開。<br>
 copyright(c) 2022 CKEFGISC<br>
