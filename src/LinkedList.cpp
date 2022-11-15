@@ -19,7 +19,7 @@ namespace AaW {  // use a namespace under your name
             node* prev; // 雙向 linked list 
 
             // constructor & deconstructor
-            node(int _val) val(_val) { } 
+            node(int _val) : val(_val) { } 
             ~node() = default; // 用內建deconstructor就好
         }; // struct node;
         
