@@ -6,6 +6,9 @@
 //  This code is licensed under MIT license (see LICENSE.txt for details)
 // 
 
+#include <iostream>
+// 在專案中不要using namespace std，會容易混淆namespace
+
 namespace AaW {  // use a namespace under your name
     
     // 宣告區
@@ -18,7 +21,7 @@ namespace AaW {  // use a namespace under your name
             // constructor & deconstructor
             node(int val);
             ~node();
-        };
+        }; // struct node;
         
         // constructor & deconstructor
         LinkedList();       // 建立新的 linked list，並且初始化兩個
@@ -39,6 +42,7 @@ namespace AaW {  // use a namespace under your name
         void insert(int val, node* pos);  //  在 pos 前方插入一項
         void erase(node* pos);            //  傳入指標，刪除該位置
         node* find(int val);              //  尋找第一個 val 出現的位置並且回傳指標
+        void print();        // 輸出整個LinkedList (之後會教要怎麼讓自定義物件可以cout)
 
     }; // struct LinkedList  (在結尾標記這個大括號是誰是個好習慣！)
 
@@ -126,12 +130,25 @@ namespace AaW {  // use a namespace under your name
         auto cur = this->begin();
 
         // 當cur的值和我們要找得不一樣時，將cur指向下一個位置
-        while (cur->val != val && cur != endNode) { 
+        while (cur->val != val && cur != this->end()) { 
             cur = cur->next;
         }
 
         // 回傳找到的結果
         return cur;
     } // LinkedList::find()
+
+    void LinkedList::print() {  // 輸出整個LinkedList
+        // cur 為迭代整個linked list要使用的指標
+        auto cur = this->begin();
+
+        // 迭代整個linked list
+        while (cur != this->end()) {
+            std::cout << cur->val << " ";
+        }
+        std::cout << std::endl;
+
+        return;
+    } // LinkedList::print()
 
 } // namespace AaW (在結尾標記這個大括號是誰是個好習慣！)
