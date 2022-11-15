@@ -9,7 +9,7 @@
 #include <iostream>
 // 在專案中不要using namespace std，會容易混淆namespace
 
-namespace AaW {  // use a namespace under your name
+namespace ________ {  // use a namespace under your name
     
     // 宣告區
     struct LinkedList {
@@ -180,4 +180,25 @@ namespace AaW {  // use a namespace under your name
         return;
     } // LinkedList::print()
 
-} // namespace AaW (在結尾標記這個大括號是誰是個好習慣！)
+} // namespace _____ (在結尾標記這個大括號是誰是個好習慣！)
+
+/////////////////////////////////////////////////////////////////////
+// 測試執行區域
+
+int main() {
+    _____::LinkedList ls;
+    std::cout << ls.size() << std::endl;
+
+    ls.insert(10, ls.begin());
+    ls.print();
+    ls.insert(20, ls.begin());
+    ls.insert(50, ls.end());
+    ls.print();
+    auto ret = ls.find(10);
+    ls.insert(12, ret);
+    ls.print();
+    ls.erase(ret);
+    ls.print();
+    std::cout << ls.size() << std::endl;
+
+}
