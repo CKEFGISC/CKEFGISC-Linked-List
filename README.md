@@ -2,7 +2,7 @@
 歡迎來到專案建置聯課的github，這裡有我們社課建立的linked list專案的樣本！<br>
 
 ## 往各個分支的快速連結
-11/16 簡報：https://slides.com/ck1100363/struct/
+11/16 簡報：https://slides.com/ck1100363/struct/ <br>
 11/16 填空：https://github.com/CKEFGISC/CKEFGISC-Linked-List/tree/2022-11-16-practice<br>
 11/16 解答：https://github.com/CKEFGISC/CKEFGISC-Linked-List/tree/2022-11-16-answer<br>
 
