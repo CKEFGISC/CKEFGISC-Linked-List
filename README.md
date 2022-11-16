@@ -10,7 +10,7 @@
 ``` 
 cd PATH_TO_FOLDER
 ```
-此時若執行`ls`指令，應該可以看到有`src`一個資料夾，以及`.gitignore`、`README.md`等檔案
+此時若執行`ls`指令，應該可以看到有`src`一個資料夾，以及`.gitignore`、`README.md`等檔案<br>
 再來，創立build資料夾：<br>
 ```
 mkdir build
