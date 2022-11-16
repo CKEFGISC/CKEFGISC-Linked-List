@@ -174,6 +174,7 @@ namespace ________ {  // use a namespace under your name
         // 迭代整個linked list
         while (cur != this->end()) {
             std::cout << cur->val << " ";
+            cur = cur->next;
         }
         std::cout << std::endl;
 
