@@ -20,7 +20,7 @@ namespace ________ {  // use a namespace under your name
 
             // constructor & deconstructor
             node(int _val) :val(_val) { }
-            ~node();
+            ~node()=default;
         }; // struct node;
         
         // constructor & deconstructor
