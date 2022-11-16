@@ -51,7 +51,7 @@ namespace ________ {  // use a namespace under your name
     //  會告訴大家要如何把實作和宣告放進不同檔案當中)
 
 
-    __________::__________() {
+    __________::__________() {  // 建構式
         // 創立startNode和endNode
         this->__________ = new LinkedList::node(0);
         this->________ = new LinkedList::node(0);
@@ -65,7 +65,7 @@ namespace ________ {  // use a namespace under your name
         return;
     } // LinkedList::LinkedList()
 
-    LinkedList::~LinkedList() {
+    LinkedList::~LinkedList() {   // 解構式
         // 刪除startNode和中間所有實節點
         auto cur = startNode;
         while (cur != endNode) {
@@ -79,11 +79,11 @@ namespace ________ {  // use a namespace under your name
         return;
     } // LinkedList::~LinkedList()
 
-    int _________::size() {
+    int _________::size() {  
         return this->_________;
     }
 
-    bool _________::empty() {
+    bool _________::empty() { 
         return (this->_________ == 0);
     }
 
