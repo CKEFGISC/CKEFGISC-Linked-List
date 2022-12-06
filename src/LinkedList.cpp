@@ -163,6 +163,11 @@ namespace Verstand {  // use a namespace under your name
             cur = cur->next;
         }
 
+        // 如果最後 cur 是 endNode，代表沒找到
+        if (cur == endNode) {
+            throw val; // 表明「哪個沒找到」
+        }
+
         // 回傳找到的結果
         return cur;
     } // LinkedList::find()
@@ -188,18 +193,18 @@ namespace Verstand {  // use a namespace under your name
 
 int main() {
     Verstand::LinkedList ls;
-    std::cout << ls.size() << std::endl;
-
-    ls.insert(10, ls.begin());
+    // 填入 1~10，故意少一個
+    for (int i=1; i<=10; i++) {
+        if (i != 4) ls.insert(i, ls.end());
+    }
     ls.print();
-    ls.insert(20, ls.begin());
-    ls.insert(50, ls.end());
-    ls.print();
-    auto ret = ls.find(10);
-    ls.insert(12, ret);
-    ls.print();
-    ls.erase(ret);
-    ls.print();
-    std::cout << ls.size() << std::endl;
-
+    // 找出少哪個
+    try {
+        for (int i=1; i<=10; i++) {
+            ls.find(i);
+        }
+    } catch (int num) {
+        std::cout << num << '\n';
+    }
+    return 0;
 }
