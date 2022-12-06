@@ -181,7 +181,7 @@ namespace Verstand {  // use a namespace under your name
         return;
     } // LinkedList::print()
 
-} // namespace AaW (在結尾標記這個大括號是誰是個好習慣！)
+} // namespace Verstand (在結尾標記這個大括號是誰是個好習慣！)
 
 /////////////////////////////////////////////////////////////////////
 // 測試執行區域
