@@ -12,7 +12,7 @@
 namespace Verstand {  // use a namespace under your name
     // 宣告區
     class LinkedList {
-    private: // 內部的零件，用 private 防止存取
+    public: // 方法作為「介面」，當然要公開存取
         class node {
         public:
             int val;    // 我們目前只支持int存在node當中，之後多形時會教怎麼做萬用版的 linked list
@@ -23,11 +23,6 @@ namespace Verstand {  // use a namespace under your name
             ~node() = default; // 用內建deconstructor就好
         }; // struct node;
 
-        // member variables
-        int listSize = 0;
-        node* startNode;    // 頭的虛節點
-        node* endNode;      // 尾的虛節點
-    public: // 方法作為「介面」，當然要公開存取
         // constructor & deconstructor
         LinkedList();       // 建立新的 linked list，並且初始化兩個虛節點
         ~LinkedList();      // 刪除每一個建立的節點
@@ -43,7 +38,11 @@ namespace Verstand {  // use a namespace under your name
         void erase(node* pos);            //  傳入指標，刪除該位置
         node* find(int val);              //  尋找第一個 val 出現的位置並且回傳指標
         void print();        // 輸出整個LinkedList (之後會教要怎麼讓自定義物件可以cout)
-
+    private: // 內部的零件，用 private 防止存取
+        // member variables
+        int listSize = 0;
+        node* startNode;    // 頭的虛節點
+        node* endNode;      // 尾的虛節點
     }; // struct LinkedList  (在結尾標記這個大括號是誰是個好習慣！)
 
     // 函數實作區
