@@ -2,7 +2,7 @@
 #include "LinkedList.h"
 
 int main() {
-    Verstand::LinkedList ls;
+    AaW::LinkedList ls;
     // 填入 1~10，故意少一個
     for (int i=1; i<=10; i++) {
         if (i != 4) ls.insert(i, ls.end());
