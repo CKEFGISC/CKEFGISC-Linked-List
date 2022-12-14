@@ -5,6 +5,8 @@
 //  Copyright(c) 2022-present, AaronWu-train, VerstandTsai & CKEFGISC contributors.
 //  This code is licensed under MIT license (see LICENSE.txt for details)
 //
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 
 #include <iostream>
 
@@ -45,3 +47,5 @@ namespace AaW {  // use a namespace under your name
     }; // struct LinkedList 
     
 } // namespace AaW
+
+#endif
