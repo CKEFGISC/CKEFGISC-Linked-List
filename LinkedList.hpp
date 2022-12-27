@@ -9,6 +9,7 @@
 #include <iostream>
 
 namespace AaW {  // use a namespace under your name
+    // 猜猜這行要放啥
     class LinkedList {
     public:
         class node {

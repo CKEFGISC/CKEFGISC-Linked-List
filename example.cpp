@@ -1,5 +1,5 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 int main() {
     AaW::LinkedList ls;
