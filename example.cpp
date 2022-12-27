@@ -1,19 +1,19 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 int main() {
-    AaW::LinkedList ls;
+    AaW::LinkedList<double> ls;
     // 填入 1~10，故意少一個
-    for (int i=1; i<=10; i++) {
-        if (i != 4) ls.insert(i, ls.end());
+    for (double i=0.1; i<=1.0; i+=0.1) {
+        if (i != 0.4) ls.insert(i, ls.end());
     }
     ls.print();
     // 找出少哪個
     try {
-        for (int i=1; i<=10; i++) {
+        for (double i=0.1; i<=1.0; i+=0.1) {
             ls.find(i);
         }
-    } catch (int num) {
+    } catch (double num) {
         std::cout << num << '\n';
     }
     return 0;

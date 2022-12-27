@@ -9,15 +9,16 @@
 #include <iostream>
 
 namespace AaW {  // use a namespace under your name
+    template<typename T> // template 宣告
     class LinkedList {
     public:
         class node {
         public:
-            int val;    // 我們目前只支持int存在node當中，之後多形時會教怎麼做萬用版的 linked list
+            T val;    // T = 萬用型別
             node* next;
             node* prev; // 雙向 linked list
             // constructor & deconstructor
-            node(int _val) : val(_val) { }
+            node(T _val) : val(_val) { }
             ~node() = default; // 用內建deconstructor就好
         }; // struct node;
 
@@ -75,7 +76,7 @@ namespace AaW {  // use a namespace under your name
             return this->startNode;
         } // rend()
 
-        void insert(int val, node* pos) {   //  在 pos 前方插入一項
+        void insert(T val, node* pos) {   //  在 pos 前方插入一項
             // 節點原本長相： beforeNode => pos
             // 插入後新長相： beforeNode => newNode => pos
 
@@ -125,7 +126,7 @@ namespace AaW {  // use a namespace under your name
 
         } // erase()
 
-        node* find(int val) {  //  尋找第一個 val 出現的位置並且回傳指標
+        node* find(T val) {  //  尋找第一個 val 出現的位置並且回傳指標
             // cur 為迭代整個linked list要使用的指標
             auto cur = this->begin();
 
